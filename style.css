@@ -198,3 +198,18 @@ button{
 button:hover{
     transform:translateY(-2px);
 }
+form{
+    max-width:500px;
+    margin:auto;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+}
+
+span{
+    color:red;
+    font-size:14px;
+}
