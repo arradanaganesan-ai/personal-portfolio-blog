@@ -1,13 +1,17 @@
 const button = document.getElementById("showBtn");
 const message = document.getElementById("message");
 
-button.addEventListener("click", () => {
+// Show or hide message
+function toggleMessage() {
     if (message.style.display === "none") {
         message.style.display = "block";
     } else {
         message.style.display = "none";
     }
-});
+}
+
+button.addEventListener("click", toggleMessage);
+// Fetch users from API and display them
 function loadUsers(){
 
 fetch("https://jsonplaceholder.typicode.com/users")
@@ -37,15 +41,18 @@ document.getElementById("users").innerHTML = output;
 .catch(error => console.log(error));
 
 }
-
+// Contact form validation
 document.getElementById("contactForm").addEventListener("submit", function(event){
 
     event.preventDefault();
 
+    function clearErrors() {
     document.getElementById("nameError").textContent = "";
     document.getElementById("emailError").textContent = "";
     document.getElementById("messageError").textContent = "";
+}
 
+clearErrors();
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let message = document.getElementById("userMessage").value.trim();
