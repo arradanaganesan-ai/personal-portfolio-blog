@@ -13,34 +13,32 @@ function toggleMessage() {
 button.addEventListener("click", toggleMessage);
 // Fetch users from API and display them
 function loadUsers(){
+    console.log("Button clicked");
 
-fetch("https://jsonplaceholder.typicode.com/users")
-
+fetch("http://localhost:3000/users")
 .then(response => response.json())
 
 .then(data => {
+  let output = "";
 
-let output = "";
+  data.forEach(user => {
+    output += `
+      <div class="card">
+        <h3>${user.name}</h3>
+      </div>
+    `;
+  });
 
-data.forEach(user => {
-
-output += `
-<div class="card">
-<h3>${user.name}</h3>
-<p>${user.email}</p>
-<p>${user.address.city}</p>
-</div>
-`;
-
-});
-
-document.getElementById("users").innerHTML = output;
-
+  document.getElementById("users").innerHTML = output;
 })
 
-.catch(error => console.log(error));
+.catch(error => {
+    console.log(error);
+    alert(error);
+});
 
 }
+loadUsers();
 // Contact form validation
 document.getElementById("contactForm").addEventListener("submit", function(event){
 
