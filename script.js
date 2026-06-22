@@ -19,12 +19,14 @@ fetch("https://personal-portfolio-blog-2.onrender.com/users")
 .then(response => response.json())
 
 .then(data => {
+  console.log(data);
   let output = "";
 
   data.forEach(user => {
     output += `
       <div class="card">
-        <h3>${user.name}</h3>
+        <h3>Name: ${user.name}</h3>
+        <p>ID: ${user.id}</p>
       </div>
     `;
   });
@@ -33,8 +35,8 @@ fetch("https://personal-portfolio-blog-2.onrender.com/users")
 })
 
 .catch(error => {
-    console.log(error);
-    alert(error);
+    console.log("Error:",error);
+    alert("API failed");
 });
 
 }
