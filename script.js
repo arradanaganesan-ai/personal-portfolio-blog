@@ -15,7 +15,7 @@ button.addEventListener("click", toggleMessage);
 function loadUsers(){
     console.log("Button clicked");
 
-fetch("http://localhost:3000/users")
+fetch("https://personal-portfolio-blog-2.onrender.com/users")
 .then(response => response.json())
 
 .then(data => {
