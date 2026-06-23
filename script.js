@@ -13,18 +13,20 @@ function toggleMessage() {
 button.addEventListener("click", toggleMessage);
 // Fetch users from API and display them
 function loadUsers(){
-    console.log("Button clicked");
+    
 
 fetch("https://personal-portfolio-blog-2.onrender.com/users")
 .then(response => response.json())
 
 .then(data => {
+  
   let output = "";
 
   data.forEach(user => {
     output += `
       <div class="card">
-        <h3>${user.name}</h3>
+        <h3>Name: ${user.name}</h3>
+        <p>ID: ${user.id}</p>
       </div>
     `;
   });
@@ -33,8 +35,8 @@ fetch("https://personal-portfolio-blog-2.onrender.com/users")
 })
 
 .catch(error => {
-    console.log(error);
-    alert(error);
+    
+    alert("API failed");
 });
 
 }

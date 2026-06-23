@@ -14,7 +14,6 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("Server running"));
 
 
 // Normal pages
@@ -144,8 +143,8 @@ app.post("/login", async (req, res) => {
   }
 });
 function authenticateToken(req, res, next) {
-  const authHeader = req.headers["authorization"];
-  console.log("AUTH HEADER:", authHeader);
+  
+  ("AUTH HEADER:", authHeader);
 
   const token = authHeader && authHeader.split(" ")[1];
 
@@ -172,7 +171,7 @@ app.get("/profile", authenticateToken, (req, res) => {
     user: req.user,
   });
 });
-console.log("PROFILE ROUTE LOADED");
+
 // Start server
 
 app.listen(PORT, () => {
