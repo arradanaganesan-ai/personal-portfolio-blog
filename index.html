@@ -7,9 +7,16 @@ initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<button id="themeBtn">🌙Dark Mode</button>
 <body>
 
     <h1>Welcome to My Portfolio</h1>
+    <h1>Hi, I'm Arradana 👋</h1>
+    <h2 id="typing"></h2>
+    <p>Building modern web applications with HTML, CSS, JavaScript and Node.js</p>
+
+    <button>GitHub Profile</button>
+    <button>View Projects</button> 
 
     <button id="showBtn">Show Message</button>
 
@@ -29,12 +36,25 @@ initial-scale=1.0">
 
 <section class="card">
 <h2>My Skills</h2>
-<p>HTML | CSS | JavaScript</p>
+<p>HTML | CSS | JavaScript | Node.js | Git & GitHub | Express.js</p>
 </section>
+<section id="projects">
+    <h2>My Projects</h2>
 
-<section class="card">
-<h2>My Projects</h2>
-<p>Portfolio Website<br>Blog Platform</p>
+    <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Responsive personal portfolio built using HTML, CSS and JavaScript.</p>
+        <a href="https://personal-portfolio-blog-xi.vercel.app">Live Demo</a>
+        <a href="https://github.com/arradanaganesan-ai/personal-portfolio-blog">GitHub</a>
+    </div>
+
+    <div class="project-card">
+        <h3>Blog Platform</h3>
+        <p>Full Stack Blog Application with Node.js and Express.</p>
+        <a href="https://personal-portfolio-blog-xi.vercel.app">Live Demo</a>
+        <a href="https://github.com/arradanaganesan-ai/personal-portfolio-blog">GitHub</a>
+    </div>
+
 </section>
 
 <section class="card">
@@ -42,28 +62,37 @@ initial-scale=1.0">
 <p>My learning journey in coding.</p>
 </section>
 
-<section class="card">
+<section id="contact" class="card">
     <h2>Contact Me</h2>
 
-    <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name">
-        <span id="nameError"></span>
-        <br><br>
+    <p>📧 Email:
+        <a href="mailto:yourmail@gmail.com">
+            yourmail@gmail.com
+        </a>
+    </p>
 
-        <input type="email" id="email" placeholder="Your Email">
-        <span id="emailError"></span>
-        <br><br>
+    <p>💻 GitHub:
+        <a href="https://github.com/yourusername" target="_blank">
+            GitHub Profile
+        </a>
+    </p>
 
-        <textarea id="userMessage" placeholder="Your Message"></textarea>
-        <span id="messageError"></span>
-        <br><br>
-
-        <button type="submit">Submit</button>
-    </form>
+    <p>🔗 LinkedIn:
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            LinkedIn Profile
+        </a>
+    </p>
 </section>
-
 <footer>
-<p>© 2026 ARRADANA | PORTFOLIO</p>
+    <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
+
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">🔗 LinkedIn</a>
+
+        <a href="mailto:yourmail@gmail.com">📧 Email</a>
+    </div>
+
+    <p>© 2026 Arradana | Full Stack Developer</p>
 </footer>
 
 <div class="navbar">

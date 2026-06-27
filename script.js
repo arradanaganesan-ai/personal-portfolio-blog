@@ -40,47 +40,22 @@ fetch("https://personal-portfolio-blog-2.onrender.com/users")
 });
 
 }
-loadUsers();
-// Contact form validation
-document.getElementById("contactForm").addEventListener("submit", function(event){
 
-    event.preventDefault();
+// Dark Mode
+const themeBtn = document.getElementById("themeBtn");
 
-    function clearErrors() {
-    document.getElementById("nameError").textContent = "";
-    document.getElementById("emailError").textContent = "";
-    document.getElementById("messageError").textContent = "";
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+const text = "Aspiring Full Stack Developer";
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+    }
 }
 
-clearErrors();
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("userMessage").value.trim();
-
-    let valid = true;
-
-    if(name === ""){
-        document.getElementById("nameError").textContent = "Name is required";
-        valid = false;
-    }
-
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-    if(email === ""){
-        document.getElementById("emailError").textContent = "Email is required";
-        valid = false;
-    }
-    else if(!email.match(emailPattern)){
-        document.getElementById("emailError").textContent = "Enter a valid email";
-        valid = false;
-    }
-
-    if(message === ""){
-        document.getElementById("messageError").textContent = "Message is required";
-        valid = false;
-    }
-
-    if(valid){
-        alert("Form Submitted Successfully!");
-    }
-});
+typeWriter();
